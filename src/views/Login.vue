@@ -22,7 +22,7 @@ const router = useRouter()
 const login = async () => {
   try {
     await store.dispatch('login', { email: email.value, password: password.value })
-    const userRole = store.state.auth.user
+    const userRole = store.state.auth.user.role
     if (userRole === 'admin') {
       router.push({ name: 'Admin' })
     } else {
